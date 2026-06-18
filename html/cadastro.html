@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro — Developer's Club</title>
+    <link rel="stylesheet" href="../css/cadastro.css">
+    <link rel="icon" href="../images/ifpb-1.png">
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a href="devclub.html" class="brand">
+                <span class="brand-icon">📚</span>
+                <span class="brand-name">Developer's Club</span>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <div class="cadastro-card">
+            <h2>Criar conta</h2>
+            <p class="cadastro-subtitle">Preencha os campos abaixo para se cadastrar</p>
+            <form id="formCadastro">
+                <div class="input-group">
+                    <label for="user" class="labels">Usuário</label>
+                    <input type="text" name="user" id="user"
+                           placeholder="Escolha um nome de usuário"
+                           class="inputs" required autocomplete="username">
+                </div>
+                <div class="input-group">
+                    <label for="e_mail" class="labels">E-mail</label>
+                    <input type="email" name="e_mail" id="e_mail"
+                           placeholder="seu@email.com"
+                           class="inputs" required autocomplete="email">
+                </div>
+                <div class="input-group">
+                    <label for="current_password" class="labels">Senha</label>
+                    <input type="password" name="current_password" id="current_password"
+                           placeholder="Crie uma senha"
+                           class="inputs" required autocomplete="new-password">
+                </div>
+                <div class="input-group">
+                    <label for="phone" class="labels">Telefone</label>
+                    <input type="text" name="phone" id="phone"
+                           placeholder="(xx) xxxxx-xxxx"
+                           class="inputs" required>
+                </div>
+                <div class="input-group">
+                    <label for="born" class="labels">Data de Nascimento</label>
+                    <input type="date" name="born" id="born"
+                           class="inputs" required>
+                </div>
+                <button type="submit" class="btn-primary">Cadastrar</button>
+                <p class="login-link">Já tem conta? <a href="login_page.html">Entrar</a></p>
+            </form>
+        </div>
+    </main>
+
+    <script src="../js/cadastro.js"></script>
+</body>
+</html>

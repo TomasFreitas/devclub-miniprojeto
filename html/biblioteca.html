@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Nick Brayan">
+    <title>Biblioteca — Developer's Club</title>
+    <link rel="stylesheet" href="../css/biblioteca.css">
+    <link rel="icon" href="../images/ifpb-1.png">
+</head>
+<body>
+
+    <!-- ══════════════════ HEADER ══════════════════ -->
+    <header>
+        <div class="header-top">
+            <a href="devclub.html" class="brand">
+                <span class="brand-icon">📚</span>
+                <span class="brand-name">Developer's Club</span>
+            </a>
+        </div>
+        <div class="header-rule"></div>
+        <nav>
+            <div class="nav-inner">
+                <a href="devclub.html"    class="buttonsnav">Home</a>
+                <a href="biblioteca.html" class="buttonsnav active">Biblioteca</a>
+                <a href="Ajuda.html"      class="buttonsnav">Ajuda</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ══════════════════ PAINEL ══════════════════ -->
+    <div class="painel-section">
+        <div class="painel-inner">
+            <div class="progresso-global">
+                <p class="prog-label" id="labelProgresso">Carregando...</p>
+                <div class="prog-track">
+                    <div class="prog-fill" id="progFill"></div>
+                </div>
+            </div>
+            <button class="btn-sortear" id="btnSortear">🎲 O que ler agora?</button>
+        </div>
+    </div>
+
+    <!-- ══════════════════ MODAL ══════════════════ -->
+    <div class="modal hidden" id="modalSorteio">
+        <div class="modal-box">
+            <button class="modal-close" id="btnFecharModal">✕</button>
+            <div class="modal-emoji">📖</div>
+            <h3>Sua próxima leitura</h3>
+            <p class="modal-titulo" id="modalTitulo"></p>
+            <p class="modal-autor"  id="modalAutor"></p>
+            <p class="modal-total"  id="modalTotal"></p>
+        </div>
+    </div>
+
+    <!-- ══════════════════ FORMULÁRIO ══════════════════ -->
+    <section class="form-section">
+        <div class="container">
+
+            <div class="form-header" id="formToggle">
+                <h3>+ Adicionar livro</h3>
+                <span class="form-toggle-icon aberto" id="toggleIcon">▲</span>
+            </div>
+
+            <div class="form-body" id="formBody">
+                <div class="feedback hidden" id="feedbackForm"></div>
+
+                <form id="formLivro" novalidate>
+                    <div class="form-grid">
+                        <div class="campo">
+                            <label for="fTitulo">Título *</label>
+                            <input type="text" id="fTitulo" placeholder="Ex: O Senhor dos Anéis" autocomplete="off">
+                        </div>
+                        <div class="campo">
+                            <label for="fAutor">Autor *</label>
+                            <input type="text" id="fAutor" placeholder="Ex: J.R.R. Tolkien" autocomplete="off">
+                        </div>
+                        <div class="campo">
+                            <label for="fStatus">Status *</label>
+                            <select id="fStatus">
+                                <option value="">Selecione...</option>
+                                <option value="Quero Ler">Quero Ler</option>
+                                <option value="Lendo">Lendo</option>
+                                <option value="Lido">Lido</option>
+                            </select>
+                        </div>
+                        <div class="campo">
+                            <label for="fGenero">Gênero</label>
+                            <input type="text" id="fGenero" placeholder="Ex: Fantasia" autocomplete="off">
+                        </div>
+                        <div class="campo">
+                            <label for="fTotalPaginas">Total de páginas *</label>
+                            <input type="number" id="fTotalPaginas" placeholder="Ex: 500" min="1">
+                        </div>
+                        <div class="campo">
+                            <label for="fPaginasLidas">Páginas já lidas</label>
+                            <input type="number" id="fPaginasLidas" placeholder="0" min="0" value="0">
+                        </div>
+                    </div>
+                    <div class="form-footer">
+                        <button type="submit" class="btn-adicionar">Adicionar livro</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ══════════════════ KANBAN ══════════════════ -->
+    <section class="kanban-section">
+        <div class="kanban-grid">
+
+            <!-- Quero Ler -->
+            <div class="kanban-col">
+                <div class="col-header quero-ler">
+                    <span class="col-icon">📌</span>
+                    <span class="col-title">Quero Ler</span>
+                    <span class="col-count" id="badgeQueroLer">0</span>
+                </div>
+                <div class="col-cards" id="cardsQueroLer"></div>
+            </div>
+
+            <!-- Lendo -->
+            <div class="kanban-col">
+                <div class="col-header lendo">
+                    <span class="col-icon">📖</span>
+                    <span class="col-title">Lendo</span>
+                    <span class="col-count" id="badgeLendo">0</span>
+                </div>
+                <div class="col-cards" id="cardsLendo"></div>
+            </div>
+
+            <!-- Lido -->
+            <div class="kanban-col">
+                <div class="col-header lido">
+                    <span class="col-icon">✅</span>
+                    <span class="col-title">Lido</span>
+                    <span class="col-count" id="badgeLido">0</span>
+                </div>
+                <div class="col-cards" id="cardsLido"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ══════════════════ FOOTER ══════════════════ -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Developer's Club</h4>
+                <ul>
+                    <li><a href="#">Quem Somos</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Informações</h4>
+                <ul>
+                    <li><a href="#">Privacidade</a></li>
+                    <li><a href="#">Termos de Uso</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Suporte</h4>
+                <ul>
+                    <li><a href="Ajuda.html">Central de Ajuda</a></li>
+                    <li><a href="#">Fale Conosco</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Developer's Club — IFPB. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../js/biblioteca.js"></script>
+</body>
+</html>

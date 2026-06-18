@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer's Club</title>
+    <link rel="stylesheet" href="../css/house_page.css">
+    <link rel="icon" href="../images/ifpb-1.png">
+</head>
+<body>
+
+    <!-- ══════════════════ HEADER ══════════════════ -->
+    <header>
+        <div class="header-top">
+            <div class="header-brand">
+                <span class="brand-icon">📚</span>
+                <span class="brand-name">Developer's Club</span>
+            </div>
+            <div class="header-search">
+                <input type="text" placeholder="Buscar livros...">
+                <button type="button">🔍</button>
+            </div>
+        </div>
+        <div class="header-rule"></div>
+        <nav>
+            <div class="nav-inner">
+                <a href="login_page.html"  class="buttonsnav">Login</a>
+                <a href="biblioteca.html"  class="buttonsnav">Biblioteca</a>
+                <a href="Ajuda.html"       class="buttonsnav">Ajuda</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ══════════════════ MAIN ══════════════════ -->
+    <main>
+
+        <!-- Hero -->
+        <section class="hero-section">
+            <span class="hero-eyebrow">IFPB · Clube da Leitura</span>
+            <h2>Leia mais.<br>Programe melhor.</h2>
+            <p>Uma comunidade de leitura para desenvolvedores do IFPB. Acompanhe sua estante, descubra novos livros e evolua junto com a turma.</p>
+            <a href="biblioteca.html" class="hero-cta">Acessar minha estante →</a>
+        </section>
+
+        <!-- About -->
+        <section class="about-section">
+            <div class="container">
+                <div class="about-label">Sobre o<br>Developer's Club</div>
+                <p>Um espaço dedicado à comunidade de desenvolvedores do IFPB, onde você encontrará os melhores materiais para expandir seus conhecimentos em programação, design, arquitetura de software e muito mais. Registre o que está lendo, acompanhe seu progresso e descubra sua próxima leitura.</p>
+            </div>
+        </section>
+
+        <!-- Categorias -->
+        <section class="categories-section">
+            <div class="container">
+                <div class="section-header">
+                    <h3 class="section-title">Categorias</h3>
+                    <div class="section-rule"></div>
+                </div>
+                <div class="categories-grid">
+                    <div class="category-card">
+                        <h4>Programação</h4>
+                        <p>Python, JavaScript, Java, C++ e muito mais</p>
+                    </div>
+                    <div class="category-card">
+                        <h4>Web Development</h4>
+                        <p>HTML, CSS, React, Vue e frameworks modernos</p>
+                    </div>
+                    <div class="category-card">
+                        <h4>Arquitetura de Software</h4>
+                        <p>Design patterns, Clean Code e boas práticas</p>
+                    </div>
+                    <div class="category-card">
+                        <h4>Banco de Dados</h4>
+                        <p>SQL, NoSQL e otimização de consultas</p>
+                    </div>
+                    <div class="category-card">
+                        <h4>DevOps & Cloud</h4>
+                        <p>Docker, Kubernetes, AWS e Azure</p>
+                    </div>
+                    <div class="category-card">
+                        <h4>Mobile Development</h4>
+                        <p>Android, iOS e desenvolvimento multiplataforma</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Livros em Destaque -->
+        <section class="featured-books">
+            <div class="container">
+                <div class="section-header">
+                    <h3 class="section-title">Livros em Destaque</h3>
+                    <div class="section-rule"></div>
+                </div>
+                <div class="books-showcase">
+                    <div class="featured-book">
+                        <div class="book-placeholder">📗</div>
+                        <h4>Clean Code</h4>
+                        <p>Robert C. Martin</p>
+                        <span class="price">R$ 89,90</span>
+                    </div>
+                    <div class="featured-book">
+                        <div class="book-placeholder">📘</div>
+                        <h4>Design Patterns</h4>
+                        <p>Gang of Four</p>
+                        <span class="price">R$ 125,00</span>
+                    </div>
+                    <div class="featured-book">
+                        <div class="book-placeholder">📙</div>
+                        <h4>The Pragmatic Programmer</h4>
+                        <p>Hunt & Thomas</p>
+                        <span class="price">R$ 95,50</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefícios -->
+        <section class="benefits-section">
+            <div class="container">
+                <div class="section-header">
+                    <h3 class="section-title">Por que entrar?</h3>
+                    <div class="section-rule"></div>
+                </div>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <span class="benefit-icon">%</span>
+                        <h4>Descontos Exclusivos</h4>
+                        <p>Até 30% de desconto em livros técnicos</p>
+                    </div>
+                    <div class="benefit-card">
+                        <span class="benefit-icon">◎</span>
+                        <h4>Comunidade Ativa</h4>
+                        <p>Conecte-se com outros desenvolvedores</p>
+                    </div>
+                    <div class="benefit-card">
+                        <span class="benefit-icon">◈</span>
+                        <h4>Eventos Regulares</h4>
+                        <p>Palestras e workshops com especialistas</p>
+                    </div>
+                    <div class="benefit-card">
+                        <span class="benefit-icon">✦</span>
+                        <h4>Recomendações</h4>
+                        <p>Sugestões baseadas em seus interesses</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pagamento -->
+        <section class="payment-section">
+            <div class="container">
+                <h3 class="section-title">Formas de Pagamento</h3>
+                <div class="payment-methods">
+                    <span class="payment-badge">Visa</span>
+                    <span class="payment-badge">Mastercard</span>
+                    <span class="payment-badge">Elo</span>
+                    <span class="payment-badge">Pix</span>
+                    <span class="payment-badge">Boleto</span>
+                    <span class="payment-badge">10× sem juros</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Redes Sociais -->
+        <section class="social-section">
+            <div class="container">
+                <h3 class="section-title">Redes Sociais</h3>
+                <div class="social-links">
+                    <a href="#" class="social-icon">Instagram</a>
+                    <a href="#" class="social-icon">Facebook</a>
+                    <a href="#" class="social-icon">Twitter</a>
+                    <a href="#" class="social-icon">LinkedIn</a>
+                    <a href="#" class="social-icon">YouTube</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="newsletter-section">
+            <div class="container">
+                <h3>Fique por dentro</h3>
+                <p>Receba as melhores recomendações de livros direto no seu e-mail</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="seu@email.com">
+                    <button type="button">Inscrever</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ══════════════════ FOOTER ══════════════════ -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Developer's Club</h4>
+                <ul>
+                    <li><a href="#">Quem Somos</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="#">Trabalhe Conosco</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Informações</h4>
+                <ul>
+                    <li><a href="#">Privacidade</a></li>
+                    <li><a href="#">Termos de Uso</a></li>
+                    <li><a href="#">Devolução e Troca</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Suporte</h4>
+                <ul>
+                    <li><a href="Ajuda.html">Central de Ajuda</a></li>
+                    <li><a href="#">Fale Conosco</a></li>
+                    <li><a href="#">Acessibilidade</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Developer's Club — IFPB. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

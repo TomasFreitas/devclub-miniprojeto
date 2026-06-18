@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Nick Brayan">
+    <title>Login — Developer's Club</title>
+    <link rel="stylesheet" href="../css/login_page.css">
+    <link rel="icon" href="../images/ifpb-1.png">
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a href="devclub.html" class="brand">
+                <span class="brand-icon">📚</span>
+                <span class="brand-name">Developer's Club</span>
+            </a>
+            <nav class="header-nav">
+                <a href="devclub.html"    class="buttonsheader">Home</a>
+                <a href="biblioteca.html" class="buttonsheader">Biblioteca</a>
+                <a href="Ajuda.html"      class="buttonsheader">Ajuda</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="login-card">
+            <h2>Entrar</h2>
+            <p class="login-subtitle">Acesse sua conta para ver sua estante</p>
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="firstinput">Usuário ou e-mail</label>
+                    <input type="text" id="firstinput" name="firstinput"
+                           placeholder="seu@email.com" required autocomplete="username">
+                </div>
+                <div class="input-group">
+                    <label for="secondinput">Senha</label>
+                    <input type="password" id="secondinput" name="secondinput"
+                           placeholder="••••••••" required autocomplete="current-password">
+                </div>
+                <p id="message"></p>
+                <button type="submit" class="btn-primary">Entrar</button>
+                <span class="divider-text">ou</span>
+                <button type="button" class="btn-secondary"
+                        onclick="window.location.href='cadastro.html'">Criar conta</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="../js/login.js"></script>
+</body>
+</html>

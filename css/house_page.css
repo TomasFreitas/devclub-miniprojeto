@@ -1,0 +1,674 @@
+/* ═══════════════════════════════════════════════════════════
+   house_page.css — Developer's Club · Home
+   Tema: Clube literário noturno
+   Paleta: fundo escuro #0F1117 · acento âmbar #F5A623 · off-white #F0EDE6
+   Tipografia: Georgia (títulos) · system-ui (corpo)
+═══════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg:          #0F1117;
+    --surface:     #1A1D27;
+    --surface-2:   #22263A;
+    --border:      #2A2D3E;
+    --amber:       #F5A623;
+    --amber-dim:   #C47F0F;
+    --amber-glow:  rgba(245, 166, 35, 0.12);
+    --text:        #F0EDE6;
+    --text-muted:  #9A97A0;
+    --text-dim:    #6B6878;
+    --white:       #FFFFFF;
+    --radius-sm:   6px;
+    --radius-md:   12px;
+    --radius-lg:   20px;
+    --shadow:      0 4px 24px rgba(0, 0, 0, 0.45);
+    --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* ══════════════════════════════════════════════════════
+   HEADER & NAV
+══════════════════════════════════════════════════════ */
+header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.brand-icon {
+    font-size: 1.6rem;
+    line-height: 1;
+}
+
+.brand-name {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--amber);
+    letter-spacing: -0.02em;
+}
+
+.header-search {
+    display: flex;
+    align-items: center;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: border-color 0.2s;
+}
+
+.header-search:focus-within {
+    border-color: var(--amber);
+}
+
+.header-search input {
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0.5rem 1rem;
+    color: var(--text);
+    font-size: 0.9rem;
+    width: 220px;
+}
+
+.header-search input::placeholder {
+    color: var(--text-dim);
+}
+
+.header-search button {
+    background: none;
+    border: none;
+    padding: 0.5rem 0.9rem;
+    cursor: pointer;
+    color: var(--text-dim);
+    font-size: 1rem;
+    transition: color 0.2s;
+}
+
+.header-search button:hover {
+    color: var(--amber);
+}
+
+/* Linha âmbar — elemento signature */
+.header-rule {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--amber), transparent);
+    opacity: 0.6;
+}
+
+nav {
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    gap: 0;
+}
+
+.buttonsnav {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+    letter-spacing: 0.01em;
+}
+
+.buttonsnav:hover {
+    color: var(--text);
+    border-bottom-color: var(--border);
+}
+
+.buttonsnav.active {
+    color: var(--amber);
+    border-bottom-color: var(--amber);
+}
+
+/* ══════════════════════════════════════════════════════
+   HERO
+══════════════════════════════════════════════════════ */
+.hero-section {
+    padding: 6rem 2rem 5rem;
+    text-align: center;
+    background: radial-gradient(ellipse at 50% 0%, rgba(245,166,35,0.08) 0%, transparent 70%);
+    border-bottom: 1px solid var(--border);
+}
+
+.hero-eyebrow {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 1.2rem;
+    opacity: 0.9;
+}
+
+.hero-section h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.2;
+    margin-bottom: 1.2rem;
+    letter-spacing: -0.03em;
+}
+
+.hero-section p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 520px;
+    margin: 0 auto 2.5rem;
+}
+
+.hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--amber);
+    color: #0F1117;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 0.8rem 2rem;
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    letter-spacing: 0.01em;
+}
+
+.hero-cta:hover {
+    background: #FFB940;
+    transform: translateY(-2px);
+}
+
+/* ══════════════════════════════════════════════════════
+   ABOUT
+══════════════════════════════════════════════════════ */
+.about-section {
+    padding: 4rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.about-section .container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.about-label {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--amber);
+    line-height: 1.2;
+}
+
+.about-section p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+/* ══════════════════════════════════════════════════════
+   CATEGORIAS
+══════════════════════════════════════════════════════ */
+.categories-section {
+    padding: 4rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.section-rule {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+}
+
+.category-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--amber);
+    border-radius: var(--radius-sm);
+    padding: 1.4rem 1.2rem;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s, border-left-color 0.2s;
+}
+
+.category-card:hover {
+    background: var(--surface-2);
+    transform: translateX(4px);
+}
+
+.category-card h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.3rem;
+}
+
+.category-card p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* ══════════════════════════════════════════════════════
+   LIVROS EM DESTAQUE
+══════════════════════════════════════════════════════ */
+.featured-books {
+    padding: 4rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.books-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.2rem;
+}
+
+.featured-book {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 1.8rem 1.4rem;
+    text-align: center;
+    transition: border-color 0.2s, transform 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.featured-book::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--amber), transparent);
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.featured-book:hover {
+    border-color: rgba(245,166,35,0.4);
+    transform: translateY(-4px);
+}
+
+.featured-book:hover::before {
+    opacity: 1;
+}
+
+.book-placeholder {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
+
+.featured-book h4 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.05rem;
+    color: var(--text);
+    margin-bottom: 0.3rem;
+}
+
+.featured-book p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.price {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--amber);
+}
+
+/* ══════════════════════════════════════════════════════
+   BENEFÍCIOS
+══════════════════════════════════════════════════════ */
+.benefits-section {
+    padding: 4rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.benefit-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 1.8rem 1.4rem;
+    transition: background 0.2s;
+}
+
+.benefit-card:hover {
+    background: var(--surface-2);
+}
+
+.benefit-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--amber-glow);
+    border: 1px solid rgba(245,166,35,0.3);
+    border-radius: 50%;
+    color: var(--amber);
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.benefit-card h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+}
+
+.benefit-card p {
+    font-size: 0.87rem;
+    color: var(--text-muted);
+}
+
+/* ══════════════════════════════════════════════════════
+   PAGAMENTO
+══════════════════════════════════════════════════════ */
+.payment-section {
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.payment-section .section-title {
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+
+.payment-methods {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.payment-badge {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 0.45rem 1rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+/* ══════════════════════════════════════════════════════
+   REDES SOCIAIS
+══════════════════════════════════════════════════════ */
+.social-section {
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.social-section .section-title {
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.social-icon {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    padding: 0.5rem 1.2rem;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    font-size: 0.87rem;
+    font-weight: 500;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.social-icon:hover {
+    border-color: var(--amber);
+    color: var(--amber);
+}
+
+/* ══════════════════════════════════════════════════════
+   NEWSLETTER
+══════════════════════════════════════════════════════ */
+.newsletter-section {
+    padding: 4rem 0;
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+}
+
+.newsletter-section h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.8rem;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+}
+
+.newsletter-section p {
+    color: var(--text-muted);
+    margin-bottom: 1.8rem;
+}
+
+.newsletter-form {
+    display: flex;
+    max-width: 440px;
+    margin: 0 auto;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: border-color 0.2s;
+}
+
+.newsletter-form:focus-within {
+    border-color: var(--amber);
+}
+
+.newsletter-form input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0.9rem 1.2rem;
+    color: var(--text);
+    font-size: 0.95rem;
+}
+
+.newsletter-form input::placeholder {
+    color: var(--text-dim);
+}
+
+.newsletter-form button {
+    background: var(--amber);
+    color: var(--bg);
+    border: none;
+    padding: 0.9rem 1.6rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    white-space: nowrap;
+}
+
+.newsletter-form button:hover {
+    background: #FFB940;
+}
+
+/* ══════════════════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════════════════ */
+footer {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    padding: 3rem 0 1.5rem;
+}
+
+.footer-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h4 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 1rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.6rem;
+}
+
+.footer-section a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.footer-section a:hover {
+    color: var(--text);
+}
+
+.footer-bottom {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.5rem 2rem 0;
+    border-top: 1px solid var(--border);
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 0.82rem;
+    color: var(--text-dim);
+}
+
+/* ══════════════════════════════════════════════════════
+   RESPONSIVIDADE
+══════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+    .header-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+        padding: 0.8rem 1.2rem;
+    }
+
+    .header-search input { width: 160px; }
+
+    .nav-inner { padding: 0 1rem; overflow-x: auto; }
+
+    .buttonsnav { padding: 0.65rem 1rem; white-space: nowrap; }
+
+    .hero-section { padding: 3.5rem 1.2rem 3rem; }
+
+    .about-section .container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .about-label { font-size: 1.4rem; }
+
+    .categories-grid,
+    .benefits-grid,
+    .books-showcase {
+        grid-template-columns: 1fr;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+        border-radius: var(--radius-md);
+    }
+
+    .newsletter-form button {
+        border-radius: 0 0 var(--radius-md) var(--radius-md);
+    }
+}

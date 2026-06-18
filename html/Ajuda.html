@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajuda — Developer's Club</title>
+    <link rel="icon" href="../images/ifpb-1.png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+
+        :root {
+            --bg: #0F1117; --surface: #1A1D27; --surface-2: #22263A;
+            --border: #2A2D3E; --amber: #F5A623;
+            --text: #F0EDE6; --text-muted: #9A97A0; --text-dim: #6B6878;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            position: sticky; top: 0; z-index: 100;
+        }
+
+        .header-top {
+            max-width: 1100px; margin: 0 auto;
+            padding: 0.9rem 2rem;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+
+        .brand { display:flex; align-items:center; gap:0.6rem; text-decoration:none; }
+        .brand-icon { font-size: 1.4rem; }
+        .brand-name {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.3rem; font-weight: 700; color: var(--amber);
+        }
+
+        .header-rule {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--amber), transparent);
+            opacity: 0.4;
+        }
+
+        nav { background: var(--bg); border-bottom: 1px solid var(--border); }
+        .nav-inner {
+            max-width: 1100px; margin: 0 auto; padding: 0 2rem; display: flex;
+        }
+        .buttonsnav {
+            display:inline-block; padding: 0.7rem 1.1rem;
+            color: var(--text-muted); text-decoration: none;
+            font-size: 0.88rem; font-weight: 500;
+            border-bottom: 2px solid transparent;
+            transition: color 0.2s, border-color 0.2s;
+        }
+        .buttonsnav:hover { color: var(--text); }
+        .buttonsnav.active { color: var(--amber); border-bottom-color: var(--amber); }
+
+        main { flex: 1; max-width: 760px; margin: 0 auto; padding: 3rem 2rem; width: 100%; }
+
+        .page-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.2rem;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .page-subtitle {
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            font-size: 1rem;
+        }
+
+        .faq-item {
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            margin-bottom: 0.8rem;
+            overflow: hidden;
+        }
+
+        .faq-q {
+            padding: 1.1rem 1.2rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--surface);
+            transition: background 0.2s;
+            user-select: none;
+        }
+
+        .faq-q:hover { background: var(--surface-2); }
+
+        .faq-icon { color: var(--amber); font-size: 1rem; transition: transform 0.2s; }
+        .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+        .faq-a {
+            background: var(--surface-2);
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            line-height: 1.7;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            padding: 0 1.2rem;
+        }
+
+        .faq-item.open .faq-a {
+            max-height: 300px;
+            padding: 1rem 1.2rem;
+        }
+
+        .contact-box {
+            margin-top: 3rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--amber);
+            border-radius: 10px;
+            padding: 1.5rem 1.4rem;
+        }
+
+        .contact-box h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.4rem;
+        }
+
+        .contact-box p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .contact-box a { color: var(--amber); text-decoration: none; }
+        .contact-box a:hover { text-decoration: underline; }
+
+        footer {
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: auto;
+        }
+
+        footer p { font-size: 0.8rem; color: var(--text-dim); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <a href="devclub.html" class="brand">
+                <span class="brand-icon">📚</span>
+                <span class="brand-name">Developer's Club</span>
+            </a>
+        </div>
+        <div class="header-rule"></div>
+        <nav>
+            <div class="nav-inner">
+                <a href="devclub.html"    class="buttonsnav">Home</a>
+                <a href="biblioteca.html" class="buttonsnav">Biblioteca</a>
+                <a href="Ajuda.html"      class="buttonsnav active">Ajuda</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="page-title">Central de Ajuda</h1>
+        <p class="page-subtitle">Perguntas frequentes sobre o Developer's Club</p>
+
+        <div class="faq-item">
+            <div class="faq-q">Como adicionar um livro à minha estante?
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-a">Na página Biblioteca, clique em "+ Adicionar livro" para expandir o formulário. Preencha título, autor, status e total de páginas e clique em "Adicionar livro". O card aparecerá na coluna correspondente ao status escolhido.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">O que é o Kanban de livros?
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-a">O Kanban organiza seus livros em três colunas: <strong>Quero Ler</strong>, <strong>Lendo</strong> e <strong>Lido</strong>. Você pode mover um livro de coluna a qualquer momento usando o seletor de status dentro do card. A mudança é salva automaticamente.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">Como funciona a barra de progresso?
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-a">Nos cards com status "Lendo", você verá um campo para inserir a página em que parou. A barra de progresso é atualizada em tempo real enquanto você digita e o valor é salvo automaticamente.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">Para que serve o botão "O que ler agora?"?
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-a">Esse botão sorteia aleatoriamente um livro da sua lista "Quero Ler" e exibe o título em destaque. É uma forma divertida de decidir qual leitura começar quando você não consegue escolher!</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">Meus dados ficam salvos se eu fechar o navegador?
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-a">Sim. Todos os dados da sua estante são salvos localmente no seu navegador usando o localStorage. Eles persistem entre sessões, mas ficam apenas neste dispositivo e neste navegador.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">Como faço para remover um livro?
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-a">Dentro de cada card há um botão "Remover". Ao clicar, o livro é excluído da sua estante e a lista é atualizada automaticamente.</div>
+        </div>
+
+        <div class="contact-box">
+            <h3>Ainda com dúvidas?</h3>
+            <p>Entre em contato com a equipe do Developer's Club pelo e-mail <a href="mailto:devclub@ifpb.edu.br">devclub@ifpb.edu.br</a></p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Developer's Club — IFPB. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // FAQ accordion
+        document.querySelectorAll('.faq-q').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.parentElement;
+                item.classList.toggle('open');
+            });
+        });
+    </script>
+
+</body>
+</html>
