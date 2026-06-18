@@ -22,37 +22,37 @@
         <div class="cadastro-card">
             <h2>Criar conta</h2>
             <p class="cadastro-subtitle">Preencha os campos abaixo para se cadastrar</p>
-            <form id="formCadastro">
+            <form id="formCadastro" action="./login_page.html">
                 <div class="input-group">
                     <label for="user" class="labels">Usuário</label>
                     <input type="text" name="user" id="user"
-                           placeholder="Escolha um nome de usuário"
-                           class="inputs" required autocomplete="username">
+                        placeholder="Escolha um nome de usuário"
+                        class="inputs" required autocomplete="username">
                 </div>
                 <div class="input-group">
                     <label for="e_mail" class="labels">E-mail</label>
                     <input type="email" name="e_mail" id="e_mail"
-                           placeholder="seu@email.com"
-                           class="inputs" required autocomplete="email">
+                        placeholder="seu@email.com"
+                        class="inputs" required autocomplete="email">
                 </div>
                 <div class="input-group">
                     <label for="current_password" class="labels">Senha</label>
                     <input type="password" name="current_password" id="current_password"
-                           placeholder="Crie uma senha"
-                           class="inputs" required autocomplete="new-password">
+                        placeholder="Crie uma senha"
+                        class="inputs" required autocomplete="new-password">
                 </div>
                 <div class="input-group">
                     <label for="phone" class="labels">Telefone</label>
                     <input type="text" name="phone" id="phone"
-                           placeholder="(xx) xxxxx-xxxx"
-                           class="inputs" required>
+                        placeholder="(xx) xxxxx-xxxx" maxlength="15"
+                        class="inputs" required>
                 </div>
                 <div class="input-group">
                     <label for="born" class="labels">Data de Nascimento</label>
                     <input type="date" name="born" id="born"
-                           class="inputs" required>
+                        class="inputs" required>
                 </div>
-                <button type="submit" class="btn-primary">Cadastrar</button>
+                <button type="submit" class="btn-primary" id="btn-submit">Cadastrar</button>
                 <p class="login-link">Já tem conta? <a href="login_page.html">Entrar</a></p>
             </form>
         </div>

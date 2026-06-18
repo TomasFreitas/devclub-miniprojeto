@@ -10,6 +10,8 @@ function login(event){
     const emailCadastrado = localStorage.getItem('cadastroEmail');
     const senhaCadastrada = localStorage.getItem('cadastroSenha');
 
+
+    console.log(usuarioCadastrado);
     const isAdmin = loginValue === "admin" && senha === "admin";
     const isLoginByEmail = loginValue === emailCadastrado && senha === senhaCadastrada;
     const isLoginByUser = loginValue === usuarioCadastrado && senha === senhaCadastrada;
